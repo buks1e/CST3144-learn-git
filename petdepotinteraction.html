@@ -17,15 +17,17 @@
             </header>
             <main>
                 <div v-if="showProduct">
-                    <figure>
-                        <img v-bind:src="product.image" style="height: 342px; width: 427px;">
+                    <figure style="display: inline-block;">
+                        <img v-bind:src="product.image" style="height: 125px; width: 100px;">
                     </figure>
-                    <h2 v-text="product.title"></h2>
-                    <p v-html="product.description"></p>
-                    <p>Price {{product.price}}</p>
-                    <p>Available Stock: {{product.availableInv}}</p>
-                    <button v-on:click="addCart" v-if="canAddToCart">Add to Cart</button>
-                    <button disabled="disabled" v-else>Add to Cart</button>
+                    <div id="info" style="display: inline-block;">
+                        <h2 v-text="product.title"></h2>
+                        <p v-html="product.description"></p>
+                        <p>Price {{product.price}}</p>
+                        <p>Available Stock: {{product.availableInv}}</p>
+                        <button v-on:click="addCart" v-if="canAddToCart">Add to Cart</button>
+                        <button disabled="disabled" v-else>Add to Cart</button>
+                    </div>    
                 </div>
                 <div v-else>
                     <h2>Checkout</h2>
