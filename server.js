@@ -83,6 +83,5 @@ app.get('/search/:collectionName/:searchText', (req,res,next) =>{
     })
 });
 
-app.listen(3000, ()=>{
-    console.log('Express.js server running on port 3000');
-})
+const port = process.env.PORT || 3000
+app.listen(port);
